@@ -1,30 +1,17 @@
+import math
 from typing import List
 
 
 def getMaxAdditionalDinersCount(N: int, K: int, M: int, S: List[int]) -> int:
-    occ = [0] * N
+    S.sort()
+    num_diners: int = (S[0] - 1) // (K + 1)
 
-    for i in S:
-        occ[i - 1] = 1
+    for i in range(1, len(S)):
+        num_diners += (S[i] - S[i - 1] - K - 1) // (K + 1)
 
-        left = i
-        right = i - 2
-        j = 0
+    num_diners += (N - S[-1]) // (K + 1)
 
-        while j < K:
-            if left >= 0:
-                occ[left] = -1
-                left -= 1
-            if right < N:
-                occ[right] = -1
-                right += 1
-            j += 1
-
-    def dfs(index):
-        if index == N:
-            return 0
-
-    return 0
+    return num_diners
 
 
-getMaxAdditionalDinersCount(10, 1, 2, [2, 6])
+print(getMaxAdditionalDinersCount(10, 1, 2, [2, 6]))
