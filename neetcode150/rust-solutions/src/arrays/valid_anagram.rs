@@ -1,5 +1,12 @@
 use std::collections::HashMap;
 
+/*
+Sol
+1. If len of strings is not equal, return false
+2. convert the first string into a hashmap that contains the count of the characters
+3. iterate the second list and subtract the count of the characters in the hashmap.
+4. if all the values in the hashmap are 0, return true else false
+*/
 fn valid_anagrams(s: String, t: String) -> bool {
     if s.len() != t.len() {
         return false;
