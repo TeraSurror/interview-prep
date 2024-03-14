@@ -4,5 +4,6 @@ def getMinCodeEntryTime(N, M, C):
 
     for dest in C:
         total += min(((dest - start) % N), ((start - dest) % N))
+        start = dest
 
     return total
