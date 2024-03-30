@@ -3,3 +3,4 @@ mod longest_substring_without_repeating_chars;
 mod longest_repeating_character_replacement;
 mod permutation_in_string;
 mod minimum_window_substring;
+mod sliding_window_maximum;
