@@ -1,6 +1,18 @@
+use std::{cmp::max, collections::VecDeque};
+
 fn length_of_longest_substring(s: String) -> i32 {
-    
-    return 0;
+    let mut q = VecDeque::new();
+    let mut result = 0;
+
+    for c in s.chars() {
+        while q.contains(&c) {
+            q.pop_front();
+        }
+        q.push_back(c);
+        result = max(result, q.len());
+    }
+
+    return result as i32;
 }
 
 #[cfg(test)]
