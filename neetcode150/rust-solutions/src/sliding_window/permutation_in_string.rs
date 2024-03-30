@@ -14,7 +14,7 @@ fn check_inclusion(s1: String, s2: String) -> bool {
     let mut start = 0;
     let mut end = s1.len();
 
-    while end < s2.len() {
+    while end <= s2.len() {
         let substring = &s2[start..end]; 
         let mut substring_letters = [0; 26];
         for letter in substring {
@@ -26,7 +26,6 @@ fn check_inclusion(s1: String, s2: String) -> bool {
                flag = false;
             }
         }
-
         if flag {
             return flag;
         }
