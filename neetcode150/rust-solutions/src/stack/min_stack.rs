@@ -8,8 +8,8 @@ struct MinStack {
 impl MinStack {
 
     fn new() -> Self {
-        let mut stack = VecDeque::new();
-        let mut min_stack = VecDeque::new();
+        let stack = VecDeque::new();
+        let min_stack = VecDeque::new();
         
         MinStack {
             stack,
